@@ -1,0 +1,24 @@
+{
+  "name": "gmail-3percent-worker",
+  "version": "1.0.0",
+  "description": "Gmail quotes +3% -> Bitrix24 comments. Replaces the n8n workflows Agent_Gmail_3percent_v1 and its auxiliary retry workflow.",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node src/main.js",
+    "local:check": "node --env-file=.env src/main.js --check",
+    "local:once": "node --env-file=.env src/main.js --once",
+    "token": "node --env-file=.env scripts/get-refresh-token.js",
+    "test": "node --test \"test/*.test.js\""
+  },
+  "dependencies": {
+    "mailparser": "^3.14.1",
+    "node-html-markdown": "^2.0.0"
+  },
+  "devDependencies": {
+    "iconv-lite": "^0.7.3"
+  }
+}
