@@ -56,7 +56,7 @@
 
 ### 2. Supabase
 
-Нужны URL проекта и ключ `service_role`: Project Settings → API.
+Нужны URL проекта (`https://<ref>.supabase.co`) и **secret key** `sb_secret_…`. Подойдёт и старый ключ `service_role` со вкладки Legacy API keys. Найти их можно в Project Settings → API Keys. Publishable key не подходит: с ним действуют ограничения RLS.
 Если старый проект потерян, создайте новый и выполните [supabase.sql](supabase.sql) в SQL Editor.
 Проект на бесплатном тарифе засыпает без активности: проверьте, что он не на паузе.
 
@@ -148,7 +148,7 @@ location /rest/ { proxy_pass https://b24-xxxxxx.bitrix24.ru; proxy_set_header Ho
 | `BITRIX_WEBHOOK_URL` | да | | URL вебхука без имени метода |
 | `BITRIX_AUTHOR_ID` | | `66` | Автор комментария |
 | `BITRIX_ENTITY_TYPE` | | `quote` | |
-| `SUPABASE_URL`, `SUPABASE_KEY` | да | | Ключ `service_role` |
+| `SUPABASE_URL`, `SUPABASE_KEY` | да | | Secret key `sb_secret_…` или legacy `service_role` |
 | `SUPABASE_TABLE` | | `missed_messages` | |
 | `POLL_INTERVAL_SEC` | | `60` | Как часто проверять почту |
 | `RETRY_INTERVAL_MIN` | | `10` | Как часто разбирать очередь |
